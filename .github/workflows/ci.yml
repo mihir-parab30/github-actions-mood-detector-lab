@@ -7,7 +7,6 @@ on:
     branches: ["main"]
 
 jobs:
-
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -34,7 +33,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          pip install pytest pytest-cov fastapi uvicorn flake8
+          pip install pytest pytest-cov fastapi uvicorn flake8 httpx
 
       - name: Run tests with coverage
         run: pytest --cov=app --cov-report=xml
@@ -42,5 +41,5 @@ jobs:
       - name: Upload coverage artifact
         uses: actions/upload-artifact@v4
         with:
-          name: coverage-report
+          name: coverage-report-${{ matrix.python-version }}
           path: coverage.xml
