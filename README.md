@@ -1,34 +1,57 @@
 # MoodDetector API — GitHub Actions CI/CD Lab
 
-This project is a refreshed and extended version of the GitHub Actions Labs (Lab 1 + Lab 2).  
-It uses a small FastAPI sentiment analysis service to demonstrate how CI pipelines are built, tested, and automated using GitHub Actions.
+This project is my redesigned and significantly expanded version of the GitHub Actions Labs (Lab 1 + Lab 2).  
+Instead of repeating the original lab, I built a complete CI workflow around a small FastAPI sentiment analysis API.  
+The focus of this project is not the API itself, but the **automation, testing, documentation, and CI pipeline** that surrounds it.
 
-The goal was to take the original lab and enhance it with cleaner structure, automated tests, linting, documentation, multi-version testing, and artifact publishing — making it production-style and portfolio-ready.
+This demonstrates practical CI/CD skills using GitHub Actions — exactly what real engineering teams expect.
 
 ---
 
-## 🚀 What This Project Includes
+## 🚀 What This Project Is About
 
-### ✔ FastAPI application
-A lightweight API with two endpoints:
+The goal was to take the concepts taught in the GitHub Actions labs and turn them into a real, professional workflow.  
+To do this, I created a small API (“MoodDetector”) and integrated it with a full CI pipeline:
 
-- **GET `/health`** — basic health check  
-- **POST `/predict`** — returns simple sentiment: `positive`, `negative`, or `neutral`
+- Automated linting  
+- Automated testing  
+- Multi-version Python test matrix  
+- Coverage generation  
+- Artifact uploads  
+- Documentation build  
+- Pre-commit code checks  
 
-### ✔ Automated CI Pipeline (GitHub Actions)
+Together, this shows a complete CI foundation for an ML or backend project.
+
+---
+
+## 🧠 About the MoodDetector API
+
+The API is intentionally simple — a lightweight FastAPI service with:
+
+- **GET `/health`**  
+  Returns a basic health response.
+
+- **POST `/predict`**  
+  Accepts text and returns a rule-based sentiment:  
+  `positive`, `negative`, or `neutral`.
+
+The simplicity of the API makes it perfect for demonstrating CI/CD concepts without unnecessary complexity.
+
+---
+
+## 🤖 What I Implemented (The Important Part)
+
+### ✔ Fully Automated CI Pipeline (GitHub Actions)
 Every push and pull request triggers:
 
-- **Linting** (flake8)  
-- **Unit tests** (pytest)  
-- **Coverage reports**  
-- **Python 3.10 & 3.11 test matrix**  
-- **Artifact uploads per Python version**  
-- **Documentation build** (MkDocs)
+- Setup of Python 3.10 and 3.11  
+- Dependency installation  
+- Linting using **flake8**  
+- Unit tests using **pytest**  
+- Coverage report generation  
+- Coverage artifacts uploaded per Python version  
 
-### ✔ Documentation Build Pipeline
-MkDocs automatically builds and uploads documentation artifacts.
+This means the entire project is verified automatically on every update — no manual steps.
 
 ---
-
-## 📁 Project Structure
-
