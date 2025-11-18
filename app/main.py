@@ -4,10 +4,13 @@ from pydantic import BaseModel
 from .model import simple_sentiment
 from .utils import normalize
 
+
 app = FastAPI(title="MoodDetector API", version="2.0.0")
+
 
 class PredictRequest(BaseModel):
     text: str
+
 
 class PredictResponse(BaseModel):
     sentiment: str

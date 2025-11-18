@@ -3,12 +3,14 @@ from app.main import app
 
 client = TestClient(app)
 
+
 def test_health_endpoint():
-    resp = client.get("/health")
-    assert resp.status_code == 200
-    assert resp.json() == {"status": "ok"}
+    response = client.get("/health")
+    assert response.status_code == 200
+    assert response.json() == {"status": "ok"}
+
 
 def test_predict_endpoint():
-    resp = client.post("/predict", json={"text": "Good product"})
-    assert resp.status_code == 200
-    assert resp.json()["sentiment"] == "positive"
+    response = client.post("/predict", json={"text": "Good service"})
+    assert response.status_code == 200
+    assert response.json()["sentiment"] == "positive"
