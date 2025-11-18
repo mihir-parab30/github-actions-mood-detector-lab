@@ -1,0 +1,28 @@
+name: Documentation Build
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install mkdocs
+        run: pip install mkdocs
+
+      - name: Build documentation
+        run: mkdocs build
+
+      - name: Upload docs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: documentation
+          path: site/
