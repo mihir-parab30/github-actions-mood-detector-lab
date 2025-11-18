@@ -1,0 +1,4 @@
+site_name: MoodDetector Documentation
+nav:
+  - Home: docs/index.md
+  - API Reference: docs/api_reference.md
